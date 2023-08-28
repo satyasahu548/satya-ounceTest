@@ -24,3 +24,4 @@ jobs:
       with:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
+        sonar-token: ${{ secrets.MY_GITHUB_TOKEN }}
