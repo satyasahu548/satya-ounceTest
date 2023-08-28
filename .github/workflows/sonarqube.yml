@@ -6,7 +6,7 @@ on:
       - master
       - main
   pull_request:
-      types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened]
 
 name: SonarQube Scan
 jobs:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           # Disabling shallow clones is recommended for improving the relevancy of reporting
           fetch-depth: 0
@@ -27,6 +27,4 @@ jobs:
       - name: Run SonarCloud Analysis
         uses: sonarsource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Use the secret here
-         
-
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # Use the correct secret name here
